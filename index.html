@@ -11,9 +11,9 @@
     </div>
     <div class="dispaly-container">
         <input readonly placeholder="Password" class="display" data-passwordDisplay>
-        <button>
+        <button data-copy>
             <span data-copyMsg></span>
-            <img src="" alt="copy" width="23" height="23">
+            <img src="./assets/copy.svg" alt="copy" width="23" height="23">
         </button>
     </div>
     <div class="input-container">
@@ -23,7 +23,7 @@
             <p data-lengthNumber>0</p>
         </div>
         <!--slider-->
-        <input type="range" min="1" max="20" class="slider" step="1" dtat-lengthSlider>
+        <input type="range" min="1" max="20" class="slider" step="1" data-lengthSlider>
         <!--checkbox-->
         <div>
             <input type="checkbox" id="uppercase">
@@ -54,5 +54,6 @@
         <!--generate password button-->
         <button class="generateButton"> Generate Password</button>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
