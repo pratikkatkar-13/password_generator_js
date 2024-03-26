@@ -18,20 +18,25 @@ const symbols = '~`!@#$%^&*()_-+={[}]|:;"<,>.?/';
 let password = "";
 let passwordLength = 10;
 let checkCount = 0;
-handleSlider();
+handleSlider(); //set initial display value of range 
+setIndicator('#ccc'); // set initial display value of strength
 
 
 //set passwordLength
 function handleSlider() {
     inputSlider.value = passwordLength;
     lengthDisplay.innerText = passwordLength;
-    //or kuch bhi karna chahiye ? - HW
+
+    const min = inputSlider.min;
+    const max = inputSlider.max;
+    inputSlider.style.backgroundSize = ((passwordLength -min)*100/(max-min))+ "% 100%"; // for making only that range in slider with different color and rest as it is
+
 }
 
 //set strength circle color to grey
 function setIndicator(color) {
     indicator.style.backgroundColor = color;
-    //shadow - HW
+    indicator.style.boxShadow = `0px 0px 12px 1px ${color}`;
 }
 
 function getRndInteger(min, max) {
@@ -88,7 +93,7 @@ async function copyContent() {
     }
     //to make visible
     copyMsg.classList.add("active");
-
+    //to make it automatically invisible after some time
     setTimeout( () => {
         copyMsg.classList.remove("active");
     },2000);
